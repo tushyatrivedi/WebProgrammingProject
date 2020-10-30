@@ -1,0 +1,16 @@
+To get started run the following SQL commands:
+
+CREATE DATABASE achatapp2;
+GRANT ALL ON achatapp2.* TO 'ttu'@'localhost' IDENTIFIED BY '2020';
+GRANT ALL ON achatapp2.* TO 'ttu'@'127.0.0.1' IDENTIFIED BY '2020';
+
+USE achatapp2; (Or select achatapp2 in phpMyAdmin)
+
+CREATE TABLE users (
+   user_id INTEGER NOT NULL
+     AUTO_INCREMENT KEY,
+   name VARCHAR(128),
+   email VARCHAR(128),
+   password VARCHAR(128),
+   INDEX(email)
+) ENGINE=InnoDB CHARSET=utf8;
